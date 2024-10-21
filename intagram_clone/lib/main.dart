@@ -8,7 +8,7 @@ import 'package:intagram_clone/SearchPage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MainPage(),
+    home: Loginpage(),
   ));
 }
 
