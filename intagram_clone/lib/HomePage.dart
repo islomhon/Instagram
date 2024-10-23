@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intagram_clone/HomePage.dart';
+import 'package:intagram_clone/LikePage.dart';
+import 'package:intagram_clone/Profile.dart';
 import 'package:intagram_clone/SearchPage.dart';
+import 'package:intagram_clone/test1.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Homepage extends StatefulWidget {
@@ -68,11 +73,18 @@ class _HomepageState extends State<Homepage> {
       heart: false, // Alohida heart qiymati
     ),
   ];
+  int _selectedIndex = 0; // Bottom navigation uchun index
 
   final List<Widget> _pages = [
     Homepage(),
     Searchpage(),
   ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -488,6 +500,28 @@ class _hitoryaState extends State<hitorya> {
                 fontSize: 50, letterSpacing: 3, color: Colors.grey.shade500),
           )
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.heart),
+            label: 'Likes',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }

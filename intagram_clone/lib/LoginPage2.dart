@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:intagram_clone/HomePage.dart'; // Correct package name if needed
+import 'package:intagram_clone/HomePage.dart';
+import 'package:intagram_clone/bottobnav.dart'; // Correct package name if needed
 
 class Loginpage2 extends StatefulWidget {
   const Loginpage2({super.key});
@@ -147,10 +148,12 @@ class _Loginpage2State extends State<Loginpage2> {
                                   child: InkWell(
                                     onTap: () {
                                       if (_formKey.currentState!.validate()) {
-                                        Navigator.push(
+                                        // Navigating to CustomBottomNavigationBar
+                                        Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Homepage()),
+                                              builder: (context) =>
+                                                  CustomBottomNavigationBar()),
                                         );
                                       }
                                     },
